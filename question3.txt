@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class sdmcet {
+public static void main(String args[]) throws Exception{
+Scanner sc=new Scanner (System.in);
+ System.out.println("Enter the line of text");
+ String txt=sc.next();
+ // create a string
+ 
+ String str1 = "SDMCET"// check if name is present in txt
+ // using contains()
+ 
+ int result= txt.compareToIgnoreCase(str1);
+ //boolean result = txt.contains(str1);
+ if(result==0) {
+ System.out.println(str1 + " is present in the string.");
+ }
+ else {
+ throw new SubstringNotFoundException();
+ }
+ }
+}
+public class SubstringNotFoundException extends Exception {
+public String toString() {
+return " Substring not found";
+}
+}

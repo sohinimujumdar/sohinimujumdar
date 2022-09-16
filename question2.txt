@@ -1,0 +1,41 @@
+import java.util.Scanner;
+public class prime {
+public static void main(String args[])throws Exception{
+int num,i;
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter any integer number:");
+//enter an input integer
+System.out.println("Enter an input integer");
+num=sc.nextInt();
+//check integer if prime
+for(i=2;i<=(num/2);i++)
+{
+if(num%i==0) {
+boolean temp = true;
+break;
+}
+boolean temp = false;
+if(num<0) {
+throw new NegetiveNumberNotAllowedException(); 
+}
+else if(temp==true) {
+throw new NumberNotPrimeException();
+}
+else {
+System.out.print(num+"is a prime number");
+}
+}
+}
+}
+public class NumberNotPrimeException extends Exception {
+public String toString() {
+return
+"NumberNotPrimeException[Number not prime]";
+}
+}
+public class NegetiveNumberNotAllowedException extends Exception {
+public String toString() {
+return
+"NegetiveNumberNotAllowedException[Negetive Number]";
+}
+}
